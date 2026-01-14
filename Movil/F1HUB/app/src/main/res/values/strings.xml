@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">F1 HUB</string>
+    <string-array name="generos">
+        <item>Hombre</item>
+        <item>Mujer</item>
+        <item>Otro</item>
+        <item>Prefiero no decirlo</item>
+    </string-array>
 </resources>

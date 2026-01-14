@@ -5,74 +5,109 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/descarga"
+    android:background="@drawable/fondoiniciosesion"
     tools:context=".InicioSesion">
 
     <TextView
         android:id="@+id/txtUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="132dp"
-        android:layout_marginEnd="22dp"
+        android:layout_marginStart="48dp"
+        android:backgroundTint="@color/white"
         android:text="Usuario"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/etUsuario"
+        app:layout_constraintBottom_toBottomOf="@+id/etUsuario"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/etUsuario"
+        app:layout_constraintVertical_bias="0.555" />
 
     <TextView
         android:id="@+id/txtContraseña"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="396dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/white"
         android:text="Contraseña"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/etContraseña"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsuario"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintTop_toTopOf="@+id/etContraseña" />
 
     <EditText
         android:id="@+id/etUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
+        android:textColor="#ED1010"
+        app:layout_constraintBottom_toTopOf="@+id/etContraseña"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.226"
         app:layout_constraintStart_toEndOf="@+id/txtUsuario"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.244" />
 
     <EditText
         android:id="@+id/etContraseña"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="376dp"
+        android:layout_marginBottom="116dp"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="text|textPassword"
         android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#ED1010"
+        app:layout_constraintBottom_toTopOf="@+id/btnIniciar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.241"
-        app:layout_constraintStart_toEndOf="@+id/txtContraseña"
-        app:layout_constraintTop_toBottomOf="@+id/etUsuario"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toEndOf="@+id/txtContraseña" />
 
     <Button
         android:id="@+id/btnIniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#505050"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/rojo"
         android:text="Iniciar"
-        android:textColorLink="#69101010"
+        android:textColorLink="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etContraseña"
-        app:layout_constraintVertical_bias="0.792" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/f1logo" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="49dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnIniciar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/etContraseña"
+        app:srcCompat="@drawable/ojo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

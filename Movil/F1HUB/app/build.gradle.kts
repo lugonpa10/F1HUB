@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.f1hub"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.f1hub"
