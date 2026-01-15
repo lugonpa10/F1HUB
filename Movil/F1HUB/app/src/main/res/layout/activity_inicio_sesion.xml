@@ -59,22 +59,22 @@
         android:inputType="text|textPassword"
         android:text="Name"
         android:textColor="#ED1010"
-        app:layout_constraintBottom_toTopOf="@+id/btnIniciar"
+        app:layout_constraintBottom_toTopOf="@+id/btnIniciarSesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toEndOf="@+id/txtContraseña" />
 
     <Button
-        android:id="@+id/btnIniciar"
+        android:id="@+id/btnIniciarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/rojo"
         android:text="Iniciar"
         android:textColorLink="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.278"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
@@ -100,14 +100,29 @@
         app:srcCompat="@drawable/f1logo" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btnVerContraseña"
         android:layout_width="49dp"
         android:layout_height="60dp"
         android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnIniciar"
+        app:layout_constraintBottom_toTopOf="@+id/btnIniciarSesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/etContraseña"
-        app:srcCompat="@drawable/ojo" />
+        app:srcCompat="@drawable/ojocerrado" />
+
+    <TextView
+        android:id="@+id/txtCrearCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="36dp"
+        android:clickable="true"
+        android:text="Crear Cuenta"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVerContraseña"
+        app:layout_constraintVertical_bias="0.918" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
