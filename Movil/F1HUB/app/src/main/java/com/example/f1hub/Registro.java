@@ -1,10 +1,13 @@
 package com.example.f1hub;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,10 +20,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Registro extends AppCompatActivity {
     boolean muestra=false;
+    Button btnSiguiente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+        btnSiguiente = findViewById(R.id.btnSiguiente);
+
         final String[] provincias=getResources().getStringArray(R.array.generos);
         Spinner spinner=findViewById(R.id.spinner);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,
@@ -33,6 +39,9 @@ public class Registro extends AppCompatActivity {
 // Se usa la variable booleana para impedir que muestre el resultado
 // seleccionado por defecto cuando se accede al activity. Solo mostramos
 // cuando seleccionamos una opción.
+
+                TextView textView = (TextView) view;
+                textView.setTextColor(getResources().getColor(R.color.rojo));
                 if (!muestra) muestra=true;
                 else {
                     Toast.makeText(getApplicationContext(), "Has selecionado: " +
@@ -40,12 +49,26 @@ public class Registro extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     setTitle(adapterView.getItemAtPosition(i).toString());
                 }
+
+
             }
+
+
             // Se ejecuta cuando se pulsa fuera del Spinner: cuandono se selecciona nada
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
 
         });
+        btnSiguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Registro.this,RegistroPassword.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }
