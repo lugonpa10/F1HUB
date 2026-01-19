@@ -26,7 +26,7 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 📝 Creación de una **segunda actividad de registro**, donde el usuario escribirá su **contraseña** y la **confirmará**.  
 ✅ Diseño y **finalización** de la primera actividad de Registro con distintos campos (nombre, apellidos, correo, etc...) y sus respectivas comprobaciones.  
-✅ Diseño y **finalización** de la segunda actividad de registro mencionada anteriormente, donde el usuario **escoge** su contraseña, también con sus respectivas comprobaciones.  
+✅ Diseño y **finalización** de la segunda actividad de registro mencionada anteriormente, donde el usuario escoge su contraseña, también con sus respectivas comprobaciones.  
 🎨 Cambios con el fin de mejorar la usabilidad.  
 
 ⏳ A **expensas** de distintos cambios visuales que puedan surgir a lo largo del proyecto, la funcionalidad tanto del inicio de sesión como de registro de un nuevo usuario quedaría **completa** en el apartado de **móviles**.
