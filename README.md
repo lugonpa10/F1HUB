@@ -1,7 +1,7 @@
 # 📄 Informe del Proyecto
 Este proyecto se basa en crear una **aplicación** multiplataforma con todos los recursos aprendidos en los 2 años del ciclo superior de DAM.  
 La **aplicación** se basa en una red social enfocada al mundo de la Fórmula 1 (F1) 🏎️.  
-Tiene como nombre "F1HUB" y busca atraer a todos los tipos de fans de este deporte, tanto expertos y muy avanzados en la materia como gente totalmente nueva con ganas de estar a la **última** **hora** sobre las noticias de la F1 .
+Tiene como nombre "F1HUB" y busca atraer a todos los tipos de fans de este deporte, tanto expertos y muy avanzados en la materia como gente totalmente nueva con ganas de estar a la **última** **hora** sobre las noticias de la F1.
 
 En este informe se plasmará cada 5 **días** los distintos avances y cambios que se vayan ocasionando en la **aplicación** en sus distintas modalidades (**web** 💻, aplicación de **escritorio** 🖥️ y aplicación **móvil** 📱).  
 
