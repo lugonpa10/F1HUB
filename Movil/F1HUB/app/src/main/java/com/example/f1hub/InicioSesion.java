@@ -19,9 +19,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.imageview.ShapeableImageView;
+
 public class InicioSesion extends AppCompatActivity {
 
-    ImageButton btnVerContraseña;
+    ShapeableImageView btnVerContraseña;
     EditText etPassword;
     EditText etUsuario;
 

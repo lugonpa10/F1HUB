@@ -8,49 +8,20 @@
     android:background="@drawable/fondoiniciosesion"
     tools:context=".InicioSesion">
 
-    <TextView
-        android:id="@+id/txtUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:backgroundTint="@color/white"
-        android:text="Usuario"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/etUsuario"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/etUsuario"
-        app:layout_constraintVertical_bias="0.555" />
 
-
-
-    <EditText
-        android:id="@+id/etUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        android:textColor="#ED1010"
-        app:layout_constraintBottom_toTopOf="@+id/layoutContraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
-        app:layout_constraintStart_toEndOf="@+id/txtUsuario"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.244" />
 
 
     <Button
         android:id="@+id/btnIniciarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="228dp"
         android:backgroundTint="@color/rojo"
         android:text="Iniciar"
         android:textColorLink="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
@@ -76,12 +47,11 @@
         app:srcCompat="@drawable/f1logo" />
 
 
-
     <TextView
         android:id="@+id/txtCrearCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="116dp"
+        android:layout_marginEnd="128dp"
         android:layout_marginBottom="36dp"
         android:clickable="true"
         android:text="Crear Cuenta"
@@ -90,16 +60,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutContraseña"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.518" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintVertical_bias="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
-       android:layout_marginLeft=""
+        android:layout_marginRight="50dp"
         android:id="@+id/layoutContraseña"
 
         >
@@ -123,7 +94,6 @@
             android:layout_marginLeft="20dp"
             android:ems="10"
             android:inputType="text|textPassword"
-            android:text="Name"
             android:textColor="#ED1010"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -136,12 +106,50 @@
             android:id="@+id/btnVerContraseña"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:background="@null"
+            android:padding="0dp"
             app:layout_constraintEnd_toEndOf="@id/etContraseña"
             app:layout_constraintTop_toTopOf="@id/etContraseña"
             app:layout_constraintBottom_toBottomOf="@id/etContraseña"
-            app:layout_constraintHorizontal_bias="1.0"
             app:srcCompat="@drawable/ojocerrado"
             />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:id="@+id/txtUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuario"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <EditText
+            android:id="@+id/etUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="#ED1010"
+            app:layout_constraintStart_toEndOf="@id/txtUsuario"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
