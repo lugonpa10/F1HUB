@@ -57,6 +57,12 @@ bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelec
                     .replace(R.id.container, messagesFragment)
                     .commit();
             return true;
+        } else if (id == R.id.perfil) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container, messagesFragment)
+                    .commit();
+            return true;
         }
 
         return false;
