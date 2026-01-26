@@ -6,7 +6,7 @@ Tiene como nombre "F1HUB" y busca atraer a todo tipo de fans de este deporte, ta
 En este informe se plasmará cada 5 **días** los distintos avances y cambios que vayan surgiendo en la **aplicación** en sus distintas modalidades (**web**, aplicación de **escritorio** y aplicación **móvil** ).  
 
 ## 🔗 Fuentes de Informacion:
-- Beekeeper studio + MySQL: [Tutorial](https://www.youtube.com/watch?v=_pyrtFLFKxM)
+- Beekeeper studio + MySQL : [Tutorial](https://www.youtube.com/watch?v=_pyrtFLFKxM)
 - Instalación de la libreria Metro Framework en C# : [Tutorial](https://www.youtube.com/watch?v=QlUmvIGYoF8)
 - Configuracion del Bottom Navigation en Android Studio : [Tutorial](https://www.youtube.com/watch?v=OV25x3a55pk)
 
