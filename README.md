@@ -5,6 +5,11 @@ Tiene como nombre "F1HUB" y busca atraer a todo tipo de fans de este deporte, ta
 
 En este informe se plasmará cada 5 **días** los distintos avances y cambios que vayan surgiendo en la **aplicación** en sus distintas modalidades (**web**, aplicación de **escritorio** y aplicación **móvil** ).  
 
+## 🔗 Fuentes de Informacion:
+Beekeeper studio + MySQL: [Tutorial](https://www.youtube.com/watch?v=_pyrtFLFKxM)
+Instalación de la libreria Metro Framework en C# : [Tutorial](https://www.youtube.com/watch?v=QlUmvIGYoF8)
+Configuracion del Bottom Navigation en Android Studio : [Tutorial](https://www.youtube.com/watch?v=OV25x3a55pk)
+
 📱 En esta primera parte se desarrollará la parte correspondiente al apartado de **móviles**.
 
 ---
@@ -26,13 +31,26 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 📝 Creación de una **segunda actividad de registro**, donde el usuario escribirá su **contraseña** y la **confirmará**.  
 ✅ Diseño y **finalización** de la primera actividad de Registro con distintos campos (nombre, apellidos, correo, etc...) y sus respectivas comprobaciones.  
-✅ Diseño y **finalización** de la segunda actividad de registro mencionada anteriormente, donde el usuario escoge su contraseña, también con sus respectivas comprobaciones.  
+✅ Diseño y **finalización** de la segunda actividad de Registro mencionada anteriormente, donde el usuario escoge su contraseña, también con sus respectivas comprobaciones.  
 🎨 Cambios con el fin de mejorar la usabilidad.  
 
 ⏳ A **expensas** de distintos cambios visuales que puedan surgir a lo largo del proyecto, la funcionalidad tanto del inicio de sesión como de registro de un nuevo usuario quedaría **completa** en el apartado de **móviles**.
 
   
-  
+---
+
+🖥️ A partir de aqui empezará el desarrollo de la parte de **escritorio**
+
+---
+
+## 📅 26/01
+
+- ⚙️ En el apartado de móviles se configuró el componente **Bottom Navigation** para la actividad principal.
+- 🗄️ Creacion de la **base de datos** y distintas tablas para almacenar todos los datos necesarios de la aplicacion a traves de **Beekeeper Studio**.
+- 🚀 Primeros avances para la creacion de la **API** (clase ApiRest).
+- 📦 Instalacion de la libreria **Metro Framework** en C# .
+
+
   
 
 
