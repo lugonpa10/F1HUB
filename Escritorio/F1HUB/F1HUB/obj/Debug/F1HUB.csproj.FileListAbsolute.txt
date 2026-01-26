@@ -1,0 +1,14 @@
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\bin\Debug\F1HUB.exe.config
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\bin\Debug\F1HUB.exe
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\bin\Debug\F1HUB.pdb
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\obj\Debug\F1HUB.csproj.AssemblyReference.cache
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\obj\Debug\F1HUB.Properties.Resources.resources
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\obj\Debug\F1HUB.csproj.GenerateResource.cache
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\obj\Debug\F1HUB.csproj.CoreCompileInputs.cache
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\obj\Debug\F1HUB.exe
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\obj\Debug\F1HUB.pdb
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\bin\Debug\Guna.UI2.dll
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\obj\Debug\F1HUB.FormInicioSesion.resources
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\obj\Debug\F1HUB.csproj.Up2Date
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\bin\Debug\MetroSet UI.dll
+C:\Users\lugon\Repositorios\F1HUB\Escritorio\F1HUB\F1HUB\obj\Debug\F1HUB.exe.config
