@@ -1,5 +1,7 @@
 package f1hub;
 
+import java.sql.Timestamp;
+
 public class Usuarios {
     private int idUsuario;
     private String nombre;
