@@ -31,6 +31,7 @@ public class InicioSesion extends AppCompatActivity {
 
     TextView txtCrearCuenta;
     boolean passVisible = true;
+    ApiRest api = new ApiRest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +82,8 @@ public class InicioSesion extends AppCompatActivity {
                 }else {
                     Toast.makeText(InicioSesion.this, "La contraseña no es correcta", Toast.LENGTH_SHORT).show();
                 }
+
+                api.subirusuario(usuario,contrasenha);
             }
         });
 
