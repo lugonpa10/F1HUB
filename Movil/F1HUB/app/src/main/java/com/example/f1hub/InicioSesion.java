@@ -83,7 +83,7 @@ public class InicioSesion extends AppCompatActivity {
                     Toast.makeText(InicioSesion.this, "La contraseña no es correcta", Toast.LENGTH_SHORT).show();
                 }
 
-                api.subirusuario(usuario,contrasenha);
+
             }
         });
 

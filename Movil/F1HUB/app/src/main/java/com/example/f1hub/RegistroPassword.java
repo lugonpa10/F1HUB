@@ -29,6 +29,13 @@ public class RegistroPassword extends AppCompatActivity {
         etContrasenha = findViewById(R.id.etPassword);
         etRepetirContrasenha = findViewById(R.id.etRepetirPassword);
         btnConfirmar = findViewById(R.id.btnConfirmar);
+        String nombre = getIntent().getStringExtra("nombre");
+        String apellidos = getIntent().getStringExtra("apellidos");
+        String fechaNacimiento = getIntent().getStringExtra("fechaNacimiento");
+        String correo = getIntent().getStringExtra("correo");
+        String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
+        String genero = getIntent().getStringExtra("genero");
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -58,6 +65,7 @@ public class RegistroPassword extends AppCompatActivity {
                                     "• 1 carácter especial",
                             Toast.LENGTH_LONG).show();
                 }
+
             }
         });
     }
