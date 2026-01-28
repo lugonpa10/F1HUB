@@ -13,7 +13,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 public class ApiRest {
-    public void resgistroUsuario(String nombre, String nombreUsuario,  String apellidos,String passwordHash, String email, String genero, String fechaNacimiento) {
+    public void resgistroUsuario(String nombre, String nombreUsuario, String apellidos, String passwordHash, String email, String genero, String fechaNacimiento) {
         new Thread(() -> {
             try {
                 URL url = new URL("http://192.130.0.125:8080/f1hub/rest/usuarios/registro");
@@ -29,8 +29,7 @@ public class ApiRest {
                 json.put("passwordHash", passwordHash);
                 json.put("email", email);
                 json.put("genero", genero);
-                json.put("fechaNacimiento",fechaNacimiento);
-
+                json.put("fechaNacimiento", fechaNacimiento);
 
 
                 System.out.println(json);
@@ -49,5 +48,37 @@ public class ApiRest {
                 Log.e("API_ERROR", "Error al registrar usuario", e);
             }
         }).start();
+    }
+
+    public int inicioSesion(String nombreUsuario, String password) {
+
+
+        try {
+            URL url = new URL("http://192.130.0.125:8080/f1hub/rest/usuarios/inicioSesion");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("Content-type", "application/json");
+            con.setDoOutput(true);
+
+            JSONObject json = new JSONObject();
+            json.put("nombreUsuario", nombreUsuario);
+            json.put("password", password);
+            System.out.println(json);
+
+            try (OutputStream os = con.getOutputStream()) {
+                os.write(json.toString().getBytes(StandardCharsets.UTF_8));
+            } catch (IOException e) {
+
+            }
+
+            int code = con.getResponseCode();
+            return code;
+
+        } catch (Exception e) {
+            Log.e("API_ERROR", "Error al registrar usuario", e);
+            return -1;
+        }
+
+
     }
 }

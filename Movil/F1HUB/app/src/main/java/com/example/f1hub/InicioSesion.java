@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -73,28 +74,35 @@ public class InicioSesion extends AppCompatActivity {
             public void onClick(View v) {
                 String usuario = etUsuario.getText().toString().trim();
                 String contrasenha = etPassword.getText().toString().trim();
+                int code = api.inicioSesion(usuario, contrasenha);
 
-                if (usuario.equals("lugonpa") && contrasenha.equals("1234")) {
+                if (code == 200) {
+                    // Login correcto
                     Intent intent = new Intent(InicioSesion.this, MainActivity.class);
                     startActivity(intent);
-                }else if (!usuario.equals("lugonpa")){
-                    Toast.makeText(InicioSesion.this, "El usuario no es correcto", Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(InicioSesion.this, "La contraseña no es correcta", Toast.LENGTH_SHORT).show();
+                }  else if (code==400){
+                    new AlertDialog.Builder(InicioSesion.this).setTitle("ALgo").setMessage("Las contraseñas no coinciden").setPositiveButton("Aceptar",null).show();
+
+                }else if (code == 401){
+                    new AlertDialog.Builder(InicioSesion.this).setTitle("ALgo").setMessage("Usuario mal").setPositiveButton("Aceptar",null).show();
+
                 }
 
 
-            }
-        });
+        }
+    });
 
-        txtCrearCuenta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(InicioSesion.this, Registro.class);
-                startActivity(intent);
-            }
-        });
+        txtCrearCuenta.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+
+        Intent intent = new Intent(InicioSesion.this, Registro.class);
+        startActivity(intent);
     }
+    });
+}
 
 
 }
