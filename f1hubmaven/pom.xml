@@ -71,6 +71,13 @@
       <artifactId>jersey-media-jaxb</artifactId>
       <version>3.0.3</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.mindrot</groupId>
+      <artifactId>jbcrypt</artifactId>
+      <version>0.4</version>
+    </dependency>
+
     <!-- application.wadl -->
     <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime -->
     <dependency>
@@ -79,10 +86,10 @@
       <version>3.0.2</version>
     </dependency>
     <dependency>
-    <groupId>org.mariadb.jdbc</groupId>
-    <artifactId>mariadb-java-client</artifactId>
-    <version>3.3.3</version>
-</dependency>
+      <groupId>org.mariadb.jdbc</groupId>
+      <artifactId>mariadb-java-client</artifactId>
+      <version>3.3.3</version>
+    </dependency>
     <!-- the REST API https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
     <!--<dependency> -->
     <!-- <groupId>javax.ws.rs</groupId> -->

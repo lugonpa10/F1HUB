@@ -100,7 +100,7 @@ public class Usuarios {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public java.sql.Date getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 }
