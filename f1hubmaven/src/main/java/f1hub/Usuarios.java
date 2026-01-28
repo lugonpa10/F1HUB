@@ -1,5 +1,6 @@
 package f1hub;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Usuarios {
@@ -11,12 +12,14 @@ public class Usuarios {
     private String genero;
     private byte[] fotoPerfil;
     private Timestamp fechaCreacion;
+    private java.sql.Date fechaNacimiento;
 
     public Usuarios() {
 
     }
 
-    public Usuarios(int idUsuario,String nombre,String nombreUsuario,String passwordHash,String email,String genero,byte[] fotoPerfil,Timestamp fechaCreacion) {
+    public Usuarios(int idUsuario, String nombre, String nombreUsuario, String passwordHash, String email,
+            String genero, byte[] fotoPerfil, Timestamp fechaCreacion, Date fechaNacimiento) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
@@ -25,7 +28,8 @@ public class Usuarios {
         this.genero = genero;
         this.fotoPerfil = fotoPerfil;
         this.fechaCreacion = fechaCreacion;
-       
+        this.fechaNacimiento = fechaNacimiento;
+
     }
 
     public void setIdUsuario(int idUsuario) {
@@ -92,4 +96,11 @@ public class Usuarios {
         return fechaCreacion;
     }
 
+    public void setFechaNacimiento(java.sql.Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public java.sql.Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
 }

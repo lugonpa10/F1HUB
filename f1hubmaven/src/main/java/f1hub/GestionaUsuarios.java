@@ -27,7 +27,8 @@ public class GestionaUsuarios {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
 
-            String sql = "INSERT INTO Usuarios (nombre, nombre_usuario,password_hash,email,genero,foto_perfil) VALUES (?, ?,?,?,?,?)";
+           String sql = "INSERT INTO Usuarios (nombre, nombre_usuario, password_hash, email, genero, foto_perfil, fecha_nacimiento) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
 
             try (Connection conexion = DriverManager.getConnection(URL, USER, PASS);
                     PreparedStatement ps = conexion.prepareStatement(sql)) {
@@ -38,6 +39,7 @@ public class GestionaUsuarios {
                 ps.setString(4, usuario.getEmail());
                 ps.setString(5, usuario.getGenero());
                 ps.setBytes(6, usuario.getFotoPerfil());
+                ps.setDate(7, usuario.getFechaNacimiento());
 
                 ps.executeUpdate();
 
