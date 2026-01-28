@@ -8,16 +8,20 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.Date;
 
 public class RegistroPassword extends AppCompatActivity {
     EditText etContrasenha;
     EditText etRepetirContrasenha;
 
     Button btnConfirmar;
+    ApiRest api = new ApiRest();
 
     @Override
 
@@ -49,21 +53,31 @@ public class RegistroPassword extends AppCompatActivity {
             public void onClick(View v) {
                 String contrasenha = etContrasenha.getText().toString();
                 String repetirContrasenha = etRepetirContrasenha.getText().toString();
-                if (contrasenhaValida(contrasenha)) {
+                if (!contrasenha.equals(repetirContrasenha)) {
+                    new AlertDialog.Builder(RegistroPassword.this).setTitle("Contrseñas incorrectas").setMessage("Las contraseñas no coinciden").setPositiveButton("Aceptar",null).show();
+
+                } else if (!contrasenhaValida(contrasenha)) {
+                    new  AlertDialog.Builder(RegistroPassword.this)
+                            .setTitle("Contraseña inválida")
+                            .setMessage(
+                                    "La contraseña debe tener:\n\n" +
+                                            "• 10 caracteres\n" +
+                                            "• 1 mayúscula\n" +
+                                            "• 1 minúscula\n" +
+                                            "• 1 número\n" +
+                                            "• 1 carácter especial"
+                            )
+                            .setPositiveButton("Aceptar", null)
+                            .show();
+
+                } else {
+                    api.resgistroUsuario(nombre,nombreUsuario, apellidos,repetirContrasenha,correo,genero,fechaNacimiento);
+
                     Toast.makeText(RegistroPassword.this, "Contraseña válida", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegistroPassword.this,MainActivity.class);
+
                     startActivity(intent);
-                } else if (!contrasenha.equals(repetirContrasenha)) {
-                    Toast.makeText(RegistroPassword.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(RegistroPassword.this,
-                            "La contraseña debe tener:\n" +
-                                    "• 10 caracteres\n" +
-                                    "• 1 mayúscula\n" +
-                                    "• 1 minúscula\n" +
-                                    "• 1 número\n" +
-                                    "• 1 carácter especial",
-                            Toast.LENGTH_LONG).show();
+
                 }
 
             }

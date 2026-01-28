@@ -9,13 +9,14 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class ApiRest {
-    public void resgistroUsuario(String nombre, String nombreUsuario, String passwordHash, String email, String genero) {
+    public void resgistroUsuario(String nombre, String nombreUsuario,  String apellidos,String passwordHash, String email, String genero, String fechaNacimiento) {
         new Thread(() -> {
             try {
-                URL url = new URL("http://192.168.1.42:8080/f1hub/rest/usuarios/registro");
+                URL url = new URL("http://192.130.0.125:8080/f1hub/rest/usuarios/registro");
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 con.setRequestMethod("POST");
                 con.setRequestProperty("Content-type", "application/json");
@@ -28,6 +29,8 @@ public class ApiRest {
                 json.put("passwordHash", passwordHash);
                 json.put("email", email);
                 json.put("genero", genero);
+                json.put("fechaNacimiento",fechaNacimiento);
+
 
 
                 System.out.println(json);
@@ -43,7 +46,7 @@ public class ApiRest {
 
 
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                Log.e("API_ERROR", "Error al registrar usuario", e);
             }
         }).start();
     }

@@ -17,6 +17,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.sql.Date;
 
 
 public class Registro extends AppCompatActivity {
@@ -82,17 +83,16 @@ public class Registro extends AppCompatActivity {
                 if (nombre.isEmpty() || apellidos.isEmpty()  || fechaNacimiento.isEmpty() ||  correo.isEmpty() ||  nombreUsuario.isEmpty()){
                     Toast.makeText(Registro.this,"Todos los campos son obligatorios",Toast.LENGTH_SHORT).show();
 
-                } else if ( nombre.equals("Nombre") || apellidos.equals("Apellidos") || fechaNacimiento.equals("Fecha") || correo.equals("Correo") || nombreUsuario.equals("Mote")){
-                    Toast.makeText(Registro.this,"Datos no validos",Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     Intent intent = new Intent(Registro.this,RegistroPassword.class);
-                    intent.putExtra("nombre", etNombre.getText().toString());
-                    intent.putExtra("apellidos", etApellidos.getText().toString());
-                    intent.putExtra("fechaNacimiento", etFechaNacimiento.getText().toString());
-                    intent.putExtra("correo", etCorreo.getText().toString());
-                    intent.putExtra("nombreUsuario", etNombreUsuario.getText().toString());
+                    intent.putExtra("nombre", nombre);
+                    intent.putExtra("apellidos", apellidos);
+                    intent.putExtra("fechaNacimiento", fechaNacimiento);
+                    intent.putExtra("correo", correo);
+                    intent.putExtra("nombreUsuario", nombreUsuario);
                     intent.putExtra("genero", spinner.getSelectedItem().toString());
                     startActivity(intent);
+
                 }
 
             }
