@@ -73,9 +73,8 @@ public class GestionaUsuarios {
     @Path("/inicioSesion")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response validarUsuario(
-            @QueryParam("nombreUsuario") String nombreUsuario,
-            @QueryParam("password") String password) {
-        if (nombreUsuario == null || password == null) {
+           Usuarios u) {
+        if (u.getNombreUsuario() == null || u.getPasswordHash() == null) {
             return Response.status(Response.Status.BAD_REQUEST).entity("Falta algun dato").build();
         }
         try {
@@ -85,7 +84,7 @@ public class GestionaUsuarios {
             try (Connection conexion = DriverManager.getConnection(URL, USER, PASS);
                     PreparedStatement ps = conexion.prepareStatement(sql)) {
 
-                ps.setString(1, nombreUsuario);
+                ps.setString(1, u.getNombreUsuario());
                 ResultSet rs = ps.executeQuery();
                 if (!rs.next()) {
                     return Response.status(Response.Status.NOT_FOUND).entity("Usuario no encontrado").build();
@@ -94,7 +93,7 @@ public class GestionaUsuarios {
 
                 String passwordHashBD = rs.getString("password_hash");
 
-                if (BCrypt.checkpw(password, passwordHashBD)) {
+                if (BCrypt.checkpw(u.getPasswordHash(), passwordHashBD)) {
                     return Response.ok("Login correcto").build();
                 } else {
                     return Response.status(Response.Status.UNAUTHORIZED)
