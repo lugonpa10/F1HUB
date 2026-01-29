@@ -50,8 +50,8 @@ public class ApiRest {
         }).start();
     }
 
-    public int inicioSesion(String nombreUsuario, String password) {
-
+    public void inicioSesion(String nombreUsuario, String password) {
+        new Thread(() -> {
 
         try {
             URL url = new URL("http://192.130.0.125:8080/f1hub/rest/usuarios/inicioSesion");
@@ -62,23 +62,29 @@ public class ApiRest {
 
             JSONObject json = new JSONObject();
             json.put("nombreUsuario", nombreUsuario);
-            json.put("password", password);
+            json.put("passwordHash", password);
             System.out.println(json);
 
-            try (OutputStream os = con.getOutputStream()) {
+            try(OutputStream os = con.getOutputStream()) {  //Enviar body
                 os.write(json.toString().getBytes(StandardCharsets.UTF_8));
-            } catch (IOException e) {
-
             }
-
+            System.out.println("hh");
             int code = con.getResponseCode();
-            return code;
+            System.out.println(code);
+
+
 
         } catch (Exception e) {
-            Log.e("API_ERROR", "Error al registrar usuario", e);
-            return -1;
+            Log.e("API_ERROR", "Error al validar usuario", e);
+
+
         }
-
-
+        }).start();
     }
 }
+
+
+
+
+
+

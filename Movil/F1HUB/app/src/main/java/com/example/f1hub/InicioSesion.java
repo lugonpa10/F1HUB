@@ -74,19 +74,31 @@ public class InicioSesion extends AppCompatActivity {
             public void onClick(View v) {
                 String usuario = etUsuario.getText().toString().trim();
                 String contrasenha = etPassword.getText().toString().trim();
-                int code = api.inicioSesion(usuario, contrasenha);
+            api.inicioSesion(usuario, contrasenha);
 
-                if (code == 200) {
-                    // Login correcto
-                    Intent intent = new Intent(InicioSesion.this, MainActivity.class);
-                    startActivity(intent);
-                }  else if (code==400){
-                    new AlertDialog.Builder(InicioSesion.this).setTitle("ALgo").setMessage("Las contraseñas no coinciden").setPositiveButton("Aceptar",null).show();
-
-                }else if (code == 401){
-                    new AlertDialog.Builder(InicioSesion.this).setTitle("ALgo").setMessage("Usuario mal").setPositiveButton("Aceptar",null).show();
-
-                }
+//                if (code == null) {
+//                    new AlertDialog.Builder(InicioSesion.this)
+//                            .setTitle("Error")
+//                            .setMessage("Error de conexión o usuario/contraseña incorrectos")
+//                            .setPositiveButton("Aceptar", null)
+//                            .show();
+//                } else if (code == 200) {
+//                    // Login correcto
+//                    Intent intent = new Intent(InicioSesion.this, MainActivity.class);
+//                    startActivity(intent);
+//                } else if (code == 401) {
+//                    new AlertDialog.Builder(InicioSesion.this)
+//                            .setTitle("Error")
+//                            .setMessage("Contraseña incorrecta")
+//                            .setPositiveButton("Aceptar", null)
+//                            .show();
+//                } else if (code == 404) {
+//                    new AlertDialog.Builder(InicioSesion.this)
+//                            .setTitle("Error")
+//                            .setMessage("Usuario no encontrado")
+//                            .setPositiveButton("Aceptar", null)
+//                            .show();
+//                }
 
 
         }
