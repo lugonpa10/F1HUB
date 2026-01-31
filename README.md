@@ -1,4 +1,4 @@
-# 📄 Informe del Proyecto
+# F1HUB
 Este proyecto se basa en crear una **aplicación** multiplataforma con todos los recursos aprendidos en los 2 años del ciclo superior de DAM.  
 La **aplicación** se basa en una red social enfocada al mundo de la Fórmula 1 (F1) 🏎️.  
 Tiene como nombre "F1HUB" y busca atraer a todo tipo de fans de este deporte, tanto expertos y muy avanzados en la materia como gente totalmente nueva con ganas de estar a la **última** **hora** sobre las noticias de la F1.
@@ -9,6 +9,8 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 - Beekeeper studio + MySQL : [Tutorial](https://www.youtube.com/watch?v=_pyrtFLFKxM)
 - Instalación de la libreria Metro Framework en C# : [Tutorial](https://www.youtube.com/watch?v=QlUmvIGYoF8)
 - Configuracion del Bottom Navigation en Android Studio : [Tutorial](https://www.youtube.com/watch?v=OV25x3a55pk)
+- Imagenes en la web de inicio de sesion : [Tutorial](https://www.youtube.com/watch?v=j4r4lYO6x_0),[Tutorial](https://www.youtube.com/watch?v=wj9txMVExZY)
+- Diseño radiobuttons en la parte web de registro : [Tutorial](https://www.youtube.com/watch?v=5OrlF71bFrk)
 
 📱 En esta primera parte se desarrollará la parte correspondiente al apartado de **móviles**.
 
@@ -49,6 +51,20 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 - 🗄️ Creacion de la **base de datos** y distintas tablas para almacenar todos los datos necesarios de la aplicacion a traves de **Beekeeper Studio**.
 - 🚀 Primeros avances para la creacion de la **API** (clase ApiRest).
 - 📦 Instalacion de la libreria **Metro Framework** en C# .
+
+
+---
+
+A partir de aqui empezará el desarrollo en la parte de **web**
+
+---
+
+## 31/01
+
+-Actualizacion en la **API**, desde android ya admite iniciar sesion con un usuario ya registrado o registrarse sino tiene cuenta y almacenarlo en la base de datos.
+-Creacion de las interfaces de inicio de sesion y registro en la parte web (sin funcionalidad).
+
+
 
 
   
