@@ -55,7 +55,12 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 📦 Instalacion de la libreria Metro Framework en C# .
 
+
+---
+
 💻 A partir de aqui empezará el desarrollo en la parte de web
+
+---
 
 ## 📅 31/01
 
