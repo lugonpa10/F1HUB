@@ -45,7 +45,7 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 ---
 
-📅 26/01
+## 📅 26/01
 
 ⚙️ En el apartado de móviles se configuró el componente Bottom Navigation para la actividad principal.
 
@@ -57,7 +57,7 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 💻 A partir de aqui empezará el desarrollo en la parte de web
 
-📅 31/01
+## 📅 31/01
 
 ⚙️ Actualización en la API, permitiendo que desde Android el usuario pueda iniciar sesión con una cuenta ya registrada o registrarse en caso de no disponer de una, almacenando correctamente los datos en la base de datos.
 
