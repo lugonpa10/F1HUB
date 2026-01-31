@@ -9,7 +9,7 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 - Beekeeper studio + MySQL : [Tutorial](https://www.youtube.com/watch?v=_pyrtFLFKxM)
 - Instalación de la libreria Metro Framework en C# : [Tutorial](https://www.youtube.com/watch?v=QlUmvIGYoF8)
 - Configuracion del Bottom Navigation en Android Studio : [Tutorial](https://www.youtube.com/watch?v=OV25x3a55pk)
-- Imagenes en la web de inicio de sesion : [Tutorial](https://www.youtube.com/watch?v=j4r4lYO6x_0),[Tutorial](https://www.youtube.com/watch?v=wj9txMVExZY)
+- Imagenes en la web de inicio de sesion : [Tutorial](https://www.youtube.com/watch?v=j4r4lYO6x_0), [Tutorial](https://www.youtube.com/watch?v=wj9txMVExZY)
 - Diseño radiobuttons en la parte web de registro : [Tutorial](https://www.youtube.com/watch?v=5OrlF71bFrk)
 
 📱 En esta primera parte se desarrollará la parte correspondiente al apartado de **móviles**.
