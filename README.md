@@ -58,15 +58,15 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 ---
 
-💻 A partir de aqui empezará el desarrollo en la parte de web
+💻 A partir de aqui empezará el desarrollo en la parte de **web**
 
 ---
 
 ## 📅 31/01
 
-⚙️ Actualización en la API, permitiendo que desde Android el usuario pueda iniciar sesión con una cuenta ya registrada o registrarse en caso de no disponer de una, almacenando correctamente los datos en la base de datos.
+⚙️ Actualización en la **API**, permitiendo que desde Android el usuario pueda iniciar sesión con una cuenta ya registrada o registrarse en caso de no disponer de una, almacenando correctamente los datos en la base de datos.
 
-🎨 Creación de las interfaces de inicio de sesión y registro en la parte web, centrándose exclusivamente en el diseño visual y quedando a la espera de implementar la funcionalidad y conexión con la API en futuras fases del proyecto.
+🎨 Creación de las interfaces de **inicio de sesión** y **registro** en la parte web, centrándose exclusivamente en el diseño visual y quedando a la espera de implementar la funcionalidad y conexión con la API en futuras fases del proyecto.
 
 
 
