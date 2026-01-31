@@ -1,4 +1,4 @@
-# F1HUB
+# F1HUB 🏎️
 Este proyecto se basa en crear una **aplicación** multiplataforma con todos los recursos aprendidos en los 2 años del ciclo superior de DAM.  
 La **aplicación** se basa en una red social enfocada al mundo de la Fórmula 1 (F1) 🏎️.  
 Tiene como nombre "F1HUB" y busca atraer a todo tipo de fans de este deporte, tanto expertos y muy avanzados en la materia como gente totalmente nueva con ganas de estar a la **última** **hora** sobre las noticias de la F1.
@@ -55,14 +55,16 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 ---
 
-A partir de aqui empezará el desarrollo en la parte de **web**
+💻 A partir de aqui empezará el desarrollo en la parte de **web**
 
 ---
 
-## 31/01
+## 📅 31/01
 
--Actualizacion en la **API**, desde android ya admite iniciar sesion con un usuario ya registrado o registrarse sino tiene cuenta y almacenarlo en la base de datos.
--Creacion de las interfaces de inicio de sesion y registro en la parte web (sin funcionalidad).
+- ⚙️ Actualización en la **API**, permitiendo que desde **Android** el usuario pueda **iniciar sesión** con una cuenta ya registrada o **registrarse** en caso de no disponer de una, almacenando correctamente los datos en la **base de datos**.
+- 🎨 Creación de las **interfaces** de **inicio de sesión**  y **registro**  en la parte **web**, centrándose exclusivamente en el **diseño visual**  y quedando a la espera de implementar la funcionalidad y conexión con la **API** en futuras fases del proyecto.
+  
+
 
 
 
