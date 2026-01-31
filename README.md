@@ -47,10 +47,10 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 ## 📅 26/01
 
-- ⚙️ En el apartado de móviles se configuró el componente **Bottom Navigation** para la actividad principal.
-- 🗄️ Creacion de la **base de datos** y distintas tablas para almacenar todos los datos necesarios de la aplicacion a traves de **Beekeeper Studio**.
-- 🚀 Primeros avances para la creacion de la **API** (clase ApiRest).
-- 📦 Instalacion de la libreria **Metro Framework** en C# .
+⚙️ En el apartado de móviles se configuró el componente **Bottom Navigation** para la actividad principal.
+🗄️ Creacion de la **base de datos** y distintas tablas para almacenar todos los datos necesarios de la aplicacion a traves de **Beekeeper Studio**.
+🚀 Primeros avances para la creacion de la **API** (clase ApiRest).
+📦 Instalacion de la libreria **Metro Framework** en C# .
 
 
 ---
@@ -61,8 +61,8 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 ## 📅 31/01
 
-- ⚙️ Actualización en la **API**, permitiendo que desde **Android** el usuario pueda **iniciar sesión** con una cuenta ya registrada o **registrarse** en caso de no disponer de una, almacenando correctamente los datos en la **base de datos**.
-- 🎨 Creación de las **interfaces** de **inicio de sesión**  y **registro**  en la parte **web**, centrándose exclusivamente en el **diseño visual**  y quedando a la espera de implementar la funcionalidad y conexión con la **API** en futuras fases del proyecto.
+⚙️ Actualización en la **API**, permitiendo que desde **Android** el usuario pueda **iniciar sesión** con una cuenta ya registrada o **registrarse** en caso de no disponer de una, almacenando correctamente los datos en la **base de datos**.
+🎨 Creación de las **interfaces** de **inicio de sesión**  y **registro**  en la parte **web**, centrándose exclusivamente en el **diseño visual**  y quedando a la espera de implementar la funcionalidad y conexión con la **API** en futuras fases del proyecto.
   
 
 
