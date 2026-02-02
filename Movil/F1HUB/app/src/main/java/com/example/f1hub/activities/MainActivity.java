@@ -1,16 +1,15 @@
-package com.example.f1hub;
+package com.example.f1hub.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toolbar;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.example.f1hub.R;
+import com.example.f1hub.fragments.HomeFragment;
+import com.example.f1hub.fragments.MessagesFragment;
+import com.example.f1hub.fragments.NotificationsFragment;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;

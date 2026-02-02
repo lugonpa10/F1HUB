@@ -1,4 +1,4 @@
-package com.example.f1hub;
+package com.example.f1hub.fragments;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.f1hub.R;
 
 public class MessagesFragment extends Fragment {
 

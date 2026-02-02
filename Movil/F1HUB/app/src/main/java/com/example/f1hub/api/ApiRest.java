@@ -1,4 +1,4 @@
-package com.example.f1hub;
+package com.example.f1hub.api;
 
 import android.util.Log;
 
@@ -9,8 +9,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.sql.Date;
-import java.sql.Timestamp;
 
 public class ApiRest {
     public void resgistroUsuario(String nombre, String nombreUsuario, String apellidos, String passwordHash, String email, String genero, String fechaNacimiento) {
@@ -25,6 +23,7 @@ public class ApiRest {
                 JSONObject json = new JSONObject();
 
                 json.put("nombre", nombre);
+                json.put("apellidos",apellidos);
                 json.put("nombreUsuario", nombreUsuario);
                 json.put("passwordHash", passwordHash);
                 json.put("email", email);
@@ -50,8 +49,15 @@ public class ApiRest {
         }).start();
     }
 
-    public void inicioSesion(String nombreUsuario, String password) {
+    public interface LoginCallback {
+        void onResult(boolean success);
+    }
+
+    public void inicioSesion(String nombreUsuario, String password, LoginCallback callback) {
+
         new Thread(() -> {
+
+
 
         try {
             URL url = new URL("http://192.130.0.125:8080/f1hub/rest/usuarios/inicioSesion");
@@ -68,18 +74,20 @@ public class ApiRest {
             try(OutputStream os = con.getOutputStream()) {  //Enviar body
                 os.write(json.toString().getBytes(StandardCharsets.UTF_8));
             }
-            System.out.println("hh");
+
             int code = con.getResponseCode();
+
             System.out.println(code);
 
-
+            callback.onResult(code == 200);
 
         } catch (Exception e) {
             Log.e("API_ERROR", "Error al validar usuario", e);
-
+            callback.onResult(false);
 
         }
         }).start();
+
     }
 }
 

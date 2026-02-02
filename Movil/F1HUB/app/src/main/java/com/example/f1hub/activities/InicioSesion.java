@@ -1,4 +1,4 @@
-package com.example.f1hub;
+package com.example.f1hub.activities;
 
 import android.content.Intent;
 import android.graphics.Paint;
@@ -8,9 +8,7 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import androidx.activity.EdgeToEdge;
@@ -20,6 +18,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.f1hub.R;
+import com.example.f1hub.api.ApiRest;
 import com.google.android.material.imageview.ShapeableImageView;
 
 public class InicioSesion extends AppCompatActivity {
@@ -74,32 +74,13 @@ public class InicioSesion extends AppCompatActivity {
             public void onClick(View v) {
                 String usuario = etUsuario.getText().toString().trim();
                 String contrasenha = etPassword.getText().toString().trim();
-            api.inicioSesion(usuario, contrasenha);
+            api.inicioSesion(usuario, contrasenha, success -> {if (success){
+                Intent intent =new Intent(InicioSesion.this, MainActivity.class);
+                startActivity(intent);
+            } else {
 
-//                if (code == null) {
-//                    new AlertDialog.Builder(InicioSesion.this)
-//                            .setTitle("Error")
-//                            .setMessage("Error de conexión o usuario/contraseña incorrectos")
-//                            .setPositiveButton("Aceptar", null)
-//                            .show();
-//                } else if (code == 200) {
-//                    // Login correcto
-//                    Intent intent = new Intent(InicioSesion.this, MainActivity.class);
-//                    startActivity(intent);
-//                } else if (code == 401) {
-//                    new AlertDialog.Builder(InicioSesion.this)
-//                            .setTitle("Error")
-//                            .setMessage("Contraseña incorrecta")
-//                            .setPositiveButton("Aceptar", null)
-//                            .show();
-//                } else if (code == 404) {
-//                    new AlertDialog.Builder(InicioSesion.this)
-//                            .setTitle("Error")
-//                            .setMessage("Usuario no encontrado")
-//                            .setPositiveButton("Aceptar", null)
-//                            .show();
-//                }
-
+            }
+                });
 
         }
     });

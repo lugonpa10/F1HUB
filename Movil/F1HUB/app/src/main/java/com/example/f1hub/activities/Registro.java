@@ -1,4 +1,4 @@
-package com.example.f1hub;
+package com.example.f1hub.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,13 +11,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import java.sql.Date;
+import com.example.f1hub.R;
 
 
 public class Registro extends AppCompatActivity {
@@ -84,7 +80,7 @@ public class Registro extends AppCompatActivity {
                     Toast.makeText(Registro.this,"Todos los campos son obligatorios",Toast.LENGTH_SHORT).show();
 
                 } else {
-                    Intent intent = new Intent(Registro.this,RegistroPassword.class);
+                    Intent intent = new Intent(Registro.this, RegistroPassword.class);
                     intent.putExtra("nombre", nombre);
                     intent.putExtra("apellidos", apellidos);
                     intent.putExtra("fechaNacimiento", fechaNacimiento);

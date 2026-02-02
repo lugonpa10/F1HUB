@@ -1,4 +1,4 @@
-package com.example.f1hub;
+package com.example.f1hub.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.Date;
+import com.example.f1hub.R;
+import com.example.f1hub.api.ApiRest;
 
 public class RegistroPassword extends AppCompatActivity {
     EditText etContrasenha;
@@ -54,7 +55,7 @@ public class RegistroPassword extends AppCompatActivity {
                 String contrasenha = etContrasenha.getText().toString();
                 String repetirContrasenha = etRepetirContrasenha.getText().toString();
                 if (!contrasenha.equals(repetirContrasenha)) {
-                    new AlertDialog.Builder(RegistroPassword.this).setTitle("Contrseñas incorrectas").setMessage("Las contraseñas no coinciden").setPositiveButton("Aceptar",null).show();
+                    new AlertDialog.Builder(RegistroPassword.this).setTitle("Contraseñas incorrectas").setMessage("Las contraseñas no coinciden").setPositiveButton("Aceptar",null).show();
 
                 } else if (!contrasenhaValida(contrasenha)) {
                     new  AlertDialog.Builder(RegistroPassword.this)
@@ -74,7 +75,7 @@ public class RegistroPassword extends AppCompatActivity {
                     api.resgistroUsuario(nombre,nombreUsuario, apellidos,repetirContrasenha,correo,genero,fechaNacimiento);
 
                     Toast.makeText(RegistroPassword.this, "Contraseña válida", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(RegistroPassword.this,MainActivity.class);
+                    Intent intent = new Intent(RegistroPassword.this, InicioSesion.class);
 
                     startActivity(intent);
 
