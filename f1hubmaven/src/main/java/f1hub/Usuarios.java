@@ -6,6 +6,7 @@ import java.sql.Timestamp;
 public class Usuarios {
     private int idUsuario;
     private String nombre;
+    private String apellidos;
     private String nombreUsuario;
     private String passwordHash;
     private String email;
@@ -18,10 +19,11 @@ public class Usuarios {
 
     }
 
-    public Usuarios(int idUsuario, String nombre, String nombreUsuario, String passwordHash, String email,
+    public Usuarios(int idUsuario, String nombre,String apellidos, String nombreUsuario, String passwordHash, String email,
             String genero, byte[] fotoPerfil, Timestamp fechaCreacion, Date fechaNacimiento) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
+        this.apellidos = apellidos;
         this.nombreUsuario = nombreUsuario;
         this.passwordHash = passwordHash;
         this.email = email;
@@ -46,6 +48,14 @@ public class Usuarios {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getApellidos() {
+        return apellidos;
     }
 
     public void setNombreUsuario(String nombreUsuario) {
@@ -103,4 +113,5 @@ public class Usuarios {
     public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
+
 }

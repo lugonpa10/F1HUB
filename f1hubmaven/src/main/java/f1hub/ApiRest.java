@@ -19,7 +19,7 @@ import jakarta.ws.rs.core.Response;
 import org.mindrot.jbcrypt.BCrypt;
 
 @Path("/usuarios")
-public class GestionaUsuarios {
+public class ApiRest {
 
     private static final String URL = "jdbc:mariadb://sql.freedb.tech:3306/freedb_F1HUB";
     private static final String USER = "freedb_lugonpa_33";
@@ -33,7 +33,7 @@ public class GestionaUsuarios {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
 
-            String sql = "INSERT INTO Usuarios (nombre, nombre_usuario, password_hash, email, genero, foto_perfil, fecha_nacimiento) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO Usuarios (nombre, apellidos,nombre_usuario,password_hash, email, genero, foto_perfil, fecha_nacimiento) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
 
             try (Connection conexion = DriverManager.getConnection(URL, USER, PASS);
                     PreparedStatement ps = conexion.prepareStatement(sql)) {
@@ -42,12 +42,13 @@ public class GestionaUsuarios {
                 String passwordEncriptada = BCrypt.hashpw(password, BCrypt.gensalt(10));
 
                 ps.setString(1, usuario.getNombre());
-                ps.setString(2, usuario.getNombreUsuario());
-                ps.setString(3, passwordEncriptada);
-                ps.setString(4, usuario.getEmail());
-                ps.setString(5, usuario.getGenero());
-                ps.setBytes(6, usuario.getFotoPerfil());
-                ps.setDate(7, usuario.getFechaNacimiento());
+                ps.setString(2, usuario.getApellidos());
+                ps.setString(3, usuario.getNombreUsuario());
+                ps.setString(4, passwordEncriptada);
+                ps.setString(5, usuario.getEmail());
+                ps.setString(6, usuario.getGenero());
+                ps.setBytes(7, usuario.getFotoPerfil());
+                ps.setDate(8, usuario.getFechaNacimiento());
 
                 ps.executeUpdate();
 
@@ -73,7 +74,7 @@ public class GestionaUsuarios {
     @Path("/inicioSesion")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response validarUsuario(
-           Usuarios u) {
+            Usuarios u) {
         if (u.getNombreUsuario() == null || u.getPasswordHash() == null) {
             return Response.status(Response.Status.BAD_REQUEST).entity("Falta algun dato").build();
         }
@@ -115,5 +116,8 @@ public class GestionaUsuarios {
         }
 
     }
+
+
+    
 
 }
