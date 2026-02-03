@@ -117,7 +117,21 @@ public class ApiRest {
 
     }
 
+    // @POST
+    // @Path("/subirPublicacion")
+    // @Consumes(MediaType.APPLICATION_JSON)
+    // public Response subirPubli(Usuarios u){
+    //     try{
+    //             Class.forName("org.mariadb.jdbc.Driver");
+    //             String sql =
 
-    
+    //     }catch(ClassNotFoundException e){
+    //             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+    //                 .entity("No se encuentra el driver")
+    //                 .build();
+    //     }
+
+
+    // }
 
 }
