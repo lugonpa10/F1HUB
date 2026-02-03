@@ -18,7 +18,7 @@ public class AdaptadorPublicaciones
 
     private List<Publicaciones> listaPosts;
 
-    // 🔹 CONSTRUCTOR CORRECTO
+
     public AdaptadorPublicaciones(List<Publicaciones> listaPosts) {
         this.listaPosts = listaPosts;
     }

@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
 
         listaPublicaciones = new ArrayList<>();
 
-        listaPublicaciones.add(new Publicaciones("Ana", "Gran carrera de Verstappen", "Hace 1h"));
+    listaPublicaciones.add(new Publicaciones("Ana", "Gran carrera de Verstappen", "Hace 1h"));
         listaPublicaciones.add(new Publicaciones("Luis", "Ferrari decepciona otra vez", "Hace 2h"));
 
         adapter = new AdaptadorPublicaciones(listaPublicaciones);
