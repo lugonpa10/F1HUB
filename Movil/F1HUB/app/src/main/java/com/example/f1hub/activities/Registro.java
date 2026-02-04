@@ -15,12 +15,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.f1hub.R;
 
+import java.util.ArrayList;
+
 
 public class Registro extends AppCompatActivity {
     boolean muestra=false;
     boolean datosCorrectos = true;
     Button btnSiguiente;
     EditText etNombre,etApellidos,etFechaNacimiento,etCorreo,etNombreUsuario;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

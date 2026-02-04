@@ -2,10 +2,12 @@ package com.example.f1hub.fragments;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,8 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.f1hub.R;
+import com.example.f1hub.activities.SubidaPublicaciones;
 import com.example.f1hub.adapters.AdaptadorPublicaciones;
 import com.example.f1hub.models.Publicaciones;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,16 +29,20 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerPosts;
     private AdaptadorPublicaciones adapter;
     private List<Publicaciones> listaPublicaciones;
+    ImageButton imgBtnPost;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
+
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerPosts = view.findViewById(R.id.recyclerPosts);
+        imgBtnPost = view.findViewById(R.id.imgBtnPost);
         recyclerPosts.setLayoutManager(new LinearLayoutManager(getContext()));
+
 
 
         listaPublicaciones = new ArrayList<>();
@@ -44,7 +52,21 @@ public class HomeFragment extends Fragment {
 
         adapter = new AdaptadorPublicaciones(listaPublicaciones);
         recyclerPosts.setAdapter(adapter);
+        imgBtnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+           Intent intent = new Intent(requireActivity(), SubidaPublicaciones.class);
+           startActivity(intent);
+            }
+        });
+
 
         return view;
+
+
     }
+
 }
+
+
+

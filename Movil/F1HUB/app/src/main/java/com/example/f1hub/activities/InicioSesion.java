@@ -8,6 +8,7 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -31,6 +32,8 @@ public class InicioSesion extends AppCompatActivity {
     Button btnIniciarSesion;
 
     TextView txtCrearCuenta;
+
+
     boolean passVisible = true;
     ApiRest api = new ApiRest();
 
@@ -78,7 +81,7 @@ public class InicioSesion extends AppCompatActivity {
                 Intent intent =new Intent(InicioSesion.this, MainActivity.class);
                 startActivity(intent);
             } else {
-
+                System.out.println("algo");
             }
                 });
 
