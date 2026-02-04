@@ -33,6 +33,11 @@ public class Usuarios {
         this.fechaNacimiento = fechaNacimiento;
 
     }
+     public Usuarios(String nombreUsuario, String passwordHash) {
+       this.nombreUsuario = nombreUsuario;
+        this.passwordHash = passwordHash;
+
+    }
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;

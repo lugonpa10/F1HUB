@@ -13,6 +13,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.PATCH;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -73,6 +74,7 @@ public class ApiRest {
     @POST
     @Path("/inicioSesion")
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response validarUsuario(
             Usuarios u) {
         if (u.getNombreUsuario() == null || u.getPasswordHash() == null) {
@@ -80,7 +82,7 @@ public class ApiRest {
         }
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            String sql = "Select password_hash from Usuarios where nombre_usuario  = ?";
+            String sql = "Select nombre,apellidos,nombre_usuario,password_hash,email,genero,fecha_nacimiento from Usuarios where nombre_usuario  = ?";
 
             try (Connection conexion = DriverManager.getConnection(URL, USER, PASS);
                     PreparedStatement ps = conexion.prepareStatement(sql)) {
@@ -95,8 +97,18 @@ public class ApiRest {
                 String passwordHashBD = rs.getString("password_hash");
 
                 if (BCrypt.checkpw(u.getPasswordHash(), passwordHashBD)) {
-                    return Response.ok("Login correcto").build();
+                    Usuarios usuarioResponse = new Usuarios();
+                   System.out.println("llega");
+                    usuarioResponse.setNombre(rs.getString("nombre"));
+                    usuarioResponse.setApellidos(rs.getString("apellidos"));
+                    usuarioResponse.setNombreUsuario(rs.getString("nombre_usuario"));
+                    usuarioResponse.setEmail(rs.getString("email"));
+                    usuarioResponse.setGenero(rs.getString("genero"));
+                    usuarioResponse.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+System.out.println("no llega");
+                    return Response.ok(usuarioResponse).build();
                 } else {
+                    System.out.println("c");
                     return Response.status(Response.Status.UNAUTHORIZED)
                             .entity("Contraseña incorrecta")
                             .build();
@@ -104,34 +116,20 @@ public class ApiRest {
 
             } catch (SQLException e) {
                 e.printStackTrace();
+                     System.out.println("error");
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                         .entity("Error SQL")
                         .build();
+                   
             }
 
         } catch (ClassNotFoundException e) {
+                 System.out.println("error2");
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("No se encuentra el driver")
                     .build();
         }
 
     }
-
-    // @POST
-    // @Path("/subirPublicacion")
-    // @Consumes(MediaType.APPLICATION_JSON)
-    // public Response subirPubli(Usuarios u){
-    //     try{
-    //             Class.forName("org.mariadb.jdbc.Driver");
-    //             String sql =
-
-    //     }catch(ClassNotFoundException e){
-    //             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-    //                 .entity("No se encuentra el driver")
-    //                 .build();
-    //     }
-
-
-    // }
 
 }
