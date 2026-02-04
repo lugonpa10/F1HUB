@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbarPublicaciones" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imgFerContento"
         android:layout_width="409dp"
         android:layout_height="636dp"
         app:layout_constraintBottom_toBottomOf="parent"

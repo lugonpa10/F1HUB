@@ -4,7 +4,10 @@ import android.util.Log;
 
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -50,15 +53,12 @@ public class ApiRest {
     }
 
     public interface LoginCallback {
-        void onResult(boolean success);
+        void onResult(boolean success,JSONObject userData);
     }
 
     public void inicioSesion(String nombreUsuario, String password, LoginCallback callback) {
 
         new Thread(() -> {
-
-
-
         try {
             URL url = new URL("http://192.130.0.125:8080/f1hub/rest/usuarios/inicioSesion");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -79,11 +79,29 @@ public class ApiRest {
 
             System.out.println(code);
 
-            callback.onResult(code == 200);
+            if (code == 200){
+
+                InputStream is = con.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
+                StringBuilder response = new StringBuilder();
+                String line;
+
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
+                }
+                reader.close();
+                JSONObject userData = new JSONObject(response.toString());
+                System.out.println("User data: " + userData);
+                callback.onResult(true,userData);
+            }else {
+                callback.onResult(false,null);
+            }
+
+
 
         } catch (Exception e) {
             Log.e("API_ERROR", "Error al validar usuario", e);
-            callback.onResult(false);
+            callback.onResult(false,null);
 
         }
         }).start();
