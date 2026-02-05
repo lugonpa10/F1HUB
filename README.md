@@ -68,6 +68,24 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 🎨 Creación de las interfaces de **inicio de sesión** y **registro** en la parte web, centrándose exclusivamente en el diseño visual y quedando a la espera de implementar la funcionalidad y conexión con la API en futuras fases del proyecto.
 
+---
+
+## 📅 05/02
+
+🛠️ Diferentes actualizaciones en la **API** para subir publicaciones.
+
+🔐 Modificacion en la funcion de **iniciar Sesion** de la API para devolver un objeto usuario tanto en el backend como en el Android Studio.
+
+📱 Creacion de nuevas **Vistas** y **Funciones** para subir un post en la aplicacion de móvil.
+
+
+
+
+
+
+
+
+
 
 
 
