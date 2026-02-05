@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -51,8 +52,6 @@ public class HomeFragment extends Fragment {
 
         listaPublicaciones = new ArrayList<>();
 
-        listaPublicaciones.add(new Publicaciones("Ana", "Gran carrera de Verstappen", "Hace 1h"));
-        listaPublicaciones.add(new Publicaciones("Luis", "Ferrari decepciona otra vez", "Hace 2h"));
 
         adapter = new AdaptadorPublicaciones(listaPublicaciones);
         recyclerPosts.setAdapter(adapter);
@@ -76,6 +75,28 @@ public class HomeFragment extends Fragment {
 
     }
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        publicacionLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == getActivity().RESULT_OK && result.getData() != null) {
+                        String post = result.getData().getStringExtra("post");
+                        String nombre = result.getData().getStringExtra("nombre");
+
+                        if (post != null && nombre != null) {
+                            listaPublicaciones.add(0,
+                                    new Publicaciones(nombre, post, "Ahora"));
+                            adapter.notifyItemInserted(0);
+                            recyclerPosts.scrollToPosition(0);
+                        }
+                    }
+                }
+        );
+    }
 }
 
 

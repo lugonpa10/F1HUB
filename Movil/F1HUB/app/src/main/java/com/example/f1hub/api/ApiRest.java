@@ -56,7 +56,7 @@ public class ApiRest {
         void onResult(boolean success,JSONObject userData);
     }
 
-    public void inicioSesion(String nombreUsuario, String password, LoginCallback callback) {
+    public void inicioSesion(String nombreUsuario, String password, LoginCallback callback) { // Cambiar a get y queryParam
 
         new Thread(() -> {
         try {
@@ -71,7 +71,7 @@ public class ApiRest {
             json.put("passwordHash", password);
             System.out.println(json);
 
-            try(OutputStream os = con.getOutputStream()) {  //Enviar body
+            try(OutputStream os = con.getOutputStream()) {
                 os.write(json.toString().getBytes(StandardCharsets.UTF_8));
             }
 
