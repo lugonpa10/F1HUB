@@ -7,7 +7,6 @@ public class Publicaciones {
     private int idPubli;
     private Usuarios usuario;
     private String texto;
-  
     private Timestamp fechaPublicacion;
 
     public Publicaciones() {
@@ -18,7 +17,7 @@ public class Publicaciones {
         this.idPubli = idPubli;
         this.usuario = usuario;
         this.texto = texto;
-    
+
         this.fechaPublicacion = fechaPublicacion;
     }
 
@@ -31,7 +30,7 @@ public class Publicaciones {
     }
 
     public void setUsuario(Usuarios usuario) {
-        usuario = usuario;
+        this.usuario = usuario;
     }
 
     public Usuarios getUsuario() {

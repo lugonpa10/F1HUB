@@ -1,6 +1,7 @@
 package f1hub;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,6 +18,8 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+
+import org.checkerframework.checker.units.qual.Current;
 import org.mindrot.jbcrypt.BCrypt;
 
 @Path("/usuarios")
@@ -98,14 +101,14 @@ public class ApiRest {
 
                 if (BCrypt.checkpw(u.getPasswordHash(), passwordHashBD)) {
                     Usuarios usuarioResponse = new Usuarios();
-                   System.out.println("llega");
+                    System.out.println("llega");
                     usuarioResponse.setNombre(rs.getString("nombre"));
                     usuarioResponse.setApellidos(rs.getString("apellidos"));
                     usuarioResponse.setNombreUsuario(rs.getString("nombre_usuario"));
                     usuarioResponse.setEmail(rs.getString("email"));
                     usuarioResponse.setGenero(rs.getString("genero"));
                     usuarioResponse.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
-System.out.println("no llega");
+                    System.out.println("no llega");
                     return Response.ok(usuarioResponse).build();
                 } else {
                     System.out.println("c");
@@ -116,18 +119,43 @@ System.out.println("no llega");
 
             } catch (SQLException e) {
                 e.printStackTrace();
-                     System.out.println("error");
+                System.out.println("error");
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                         .entity("Error SQL")
                         .build();
-                   
+
             }
 
         } catch (ClassNotFoundException e) {
-                 System.out.println("error2");
+            System.out.println("error2");
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("No se encuentra el driver")
                     .build();
+        }
+
+    }
+
+    @POST
+    @Path("/subirPublicaciones")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response subirPublicacion(Publicaciones p) {
+        try {
+            Class.forName("org.mariadb.jdbc.Driver");
+            String sql = "Insert into Publicaciones(id_Usuario,texto,fecha_publicacion) VALUES (?,?,current_timestamp)";
+            try (Connection conexion = DriverManager.getConnection(URL, USER, PASS);
+                    PreparedStatement ps = conexion.prepareStatement(sql)) {
+                        ps.setInt(1,p.getUsuario().getIdUsuario());
+                        ps.setString(2, p.getTexto());
+                        
+
+                        
+                        
+
+            } catch (SQLException e) {
+
+            }
+        } catch (ClassNotFoundException ex) {
+            // TODO: handle exception
         }
 
     }
