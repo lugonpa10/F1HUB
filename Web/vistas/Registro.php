@@ -1,16 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Paso 1 - F1 HUB</title>
     <link rel="stylesheet" href="/public/css/Registro.css">
 </head>
+
 <body>
 
     <nav class="top-menu">
         <div class="logo">F1 HUB</div>
+
         <ul>
             <li><a href="#">Pilotos</a></li>
             <li><a href="#">Coches</a></li>
@@ -21,9 +23,14 @@
     <main class="auth-wrapper">
         <div class="login-box">
             <h2>Crear Cuenta</h2>
-         
 
-            <form>
+            <?php if (isset($_GET['error']) && $_GET['error'] == 'api'): ?>
+                <div>
+                    <strong>Error de conexión:</strong> No se ha podido comunicar con el servidor de F1 Hub. Inténtalo más tarde.
+                </div>
+            <?php endif; ?>
+
+            <form action="index.php?action=registroPaso1" method="POST">
                 <div class="input-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -37,25 +44,30 @@
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="input-group">
+                    <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                    <input type="date" name="fechaNacimiento" id="fechaNacimiento" required>
+
+                </div>
+                <div class="input-group">
                     <label for="nombreUsuario">Nombre de Usuario</label>
                     <input type="text" id="nombreUsuario" name="nombreUsuario" required>
                 </div>
 
                 <div class="radio_group">
-                    <input type="radio" name="value" id="radio1">
+                    <input type="radio" name="genero" id="radio1">
                     <label for="radio1" class="radio_label">Hombre</label>
-                    
-                    <input type="radio" name="value" id="radio2">
+
+                    <input type="radio" name="genero" id="radio2">
                     <label for="radio2" class="radio_label">Mujer</label>
 
-                     <input type="radio" name="value" id="radio3">
+                    <input type="radio" name="genero" id="radio3">
                     <label for="radio3" class="radio_label">Otro</label>
 
-                    <input type="radio" name="value" id="radio4">
+                    <input type="radio" name="genero" id="radio4">
                     <label for="radio4" class="radio_label">Prefiero no decirlo</label>
                 </div>
 
-                <a href="Registro2.php" class="btn-confirm" style="text-decoration: none; display: block; text-align: center; line-height: 45px;">Siguiente</a>
+              <button type="submit" class="btn-confirm">Siguiente</button>
             </form>
 
             <div class="register-link">
@@ -65,4 +77,5 @@
     </main>
 
 </body>
+
 </html>

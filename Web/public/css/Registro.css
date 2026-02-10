@@ -10,10 +10,14 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #15151e;
-   
+
     color: white;
 }
 
+.top-menu .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 
 .top-menu {
     background-color: #e10600;
@@ -26,11 +30,19 @@ body {
 
 .top-menu ul {
     list-style: none;
-  
+
     display: flex;
-  
+
     gap: 20px;
 
+}
+
+.top-menu .imagen{
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+   
+    
 }
 
 .top-menu a {
@@ -39,10 +51,15 @@ body {
     font-weight: 500;
 }
 
+.top-menu a:hover {
+    opacity: 0.8;
+}
+
+
 
 .auth-wrapper {
     flex: 1;
-   
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +71,7 @@ body {
     padding: 40px;
     width: 100%;
     max-width: 450px;
-    
+
     border-radius: 8px;
     border: 1px solid #333;
     text-align: center;
@@ -131,7 +148,7 @@ body {
     justify-content: center;
     border: 2px solid #fff;
     border-radius: 15px;
-    cursor:pointer;
+    cursor: pointer;
 
 }
 
@@ -142,7 +159,7 @@ body {
 
 .radio_group input:checked+.radio_label {
     background-color: #e10600;
- 
+
     border-color: #e10600;
     color: #fff;
     box-shadow: 0 0 15px rgba(225, 6, 0, 0.5);

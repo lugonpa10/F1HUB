@@ -22,7 +22,7 @@
             <h2>Seguridad</h2>
      
 
-            <form action="/procesar-registro" method="POST">
+            <form action="index.php?action=registroPaso2" method="POST">
                 <div class="input-group">
                     <label for="password">Contraseña</label>
                     <input type="password" id="password" name="password" required>
