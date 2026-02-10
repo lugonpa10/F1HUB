@@ -78,6 +78,16 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 📱 Creacion de nuevas **Vistas** y **Funciones** para subir un post en la aplicacion de móvil.
 
+---
+
+## 📅 10/02
+
+🚀 En la parte web primeros avances para registrar nuevos usuarios y que queden reflejados en la base de datos y los usuarios que esten registrados puedan iniciar sesion.
+
+✅ Correciones para cambiar de una vista a otra en la propia web
+
+⚙️ Ajuste de componentes en la pantalla de moviles e implementacion de tema claro y oscuro.
+
 
 
 
