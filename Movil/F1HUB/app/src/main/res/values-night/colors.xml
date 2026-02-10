@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Toolbar en modo oscuro -->
+    <color name="toolbar_color">#FFFFFF</color> <!-- gris oscuro o el color que quieras -->
+
+    <!-- Botón en modo oscuro -->
+    <color name="btn_color">#ED1010</color> <!-- rojo -->
+
+
+    <!-- Texto -->
+    <color name="texto_principal">#FFFFFF</color>
+</resources>

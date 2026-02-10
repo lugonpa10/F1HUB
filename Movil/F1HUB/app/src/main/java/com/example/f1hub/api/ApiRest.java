@@ -60,7 +60,7 @@ public class ApiRest {
 
         new Thread(() -> {
         try {
-            URL url = new URL("http://192.130.0.125:8080/f1hub/rest/usuarios/inicioSesion");
+            URL url = new URL("http://192.130.0.142:8080/f1hub/rest/usuarios/inicioSesion");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-type", "application/json");

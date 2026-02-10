@@ -50,7 +50,7 @@ public class Registro extends AppCompatActivity {
 // cuando seleccionamos una opción.
 
                 TextView textView = (TextView) view;
-                textView.setTextColor(getResources().getColor(R.color.rojo));
+                textView.setTextColor(getResources().getColor(R.color.btn_color));
                 if (!muestra) muestra=true;
                 else {
                     Toast.makeText(getApplicationContext(), "Has selecionado: " +

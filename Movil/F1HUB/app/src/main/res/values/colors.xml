@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-   <color name="rojo">#E60606</color>
+    <!-- Toolbar en modo claro -->
+    <color name="toolbar_color">#FFFFFF</color>
 
+    <!-- Botón en modo claro -->
+    <color name="btn_color">#ED1010</color> <!-- rojo -->
+
+    <!-- Texto -->
+    <color name="texto_principal">#000000</color>
+
+    <color name="statusBar">#FFFFFF</color>
 </resources>

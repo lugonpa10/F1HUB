@@ -9,31 +9,30 @@
     tools:context=".activities.InicioSesion">
 
 
-
-
     <Button
         android:id="@+id/btnIniciarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="228dp"
-        android:backgroundTint="@color/rojo"
+        android:backgroundTint="@color/btn_color"
         android:text="Iniciar"
-        android:textColorLink="#4CAF50"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/toolbar_color"
+        app:layout_constraintBottom_toBottomOf="@+id/txtCrearCuenta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.207"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtCrearCuenta" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/toolbar_color"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView3"
@@ -51,41 +50,39 @@
         android:id="@+id/txtCrearCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="128dp"
         android:layout_marginBottom="36dp"
         android:clickable="true"
         android:text="Crear Cuenta"
-        android:textColor="@color/white"
+
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnIniciarSesion"
         app:layout_constraintTop_toBottomOf="@+id/layoutContraseña"
         app:layout_constraintVertical_bias="0.518" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
+        android:id="@+id/layoutContraseña"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginRight="50dp"
-        android:id="@+id/layoutContraseña"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
 
-        >
+        app:layout_constraintVertical_bias="0.3">
+
         <TextView
             android:id="@+id/txtContraseña"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
             android:text="Contraseña"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/texto_principal"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etContraseña"
@@ -108,11 +105,10 @@
             android:layout_height="30dp"
             android:background="@null"
             android:padding="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/etContraseña"
             app:layout_constraintEnd_toEndOf="@id/etContraseña"
             app:layout_constraintTop_toTopOf="@id/etContraseña"
-            app:layout_constraintBottom_toBottomOf="@id/etContraseña"
-            app:srcCompat="@drawable/ojocerrado"
-            />
+            app:srcCompat="@drawable/ojocerrado" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -120,22 +116,21 @@
         android:id="@+id/layoutUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="30dp"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <TextView
             android:id="@+id/txtUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Usuario"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/texto_principal"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etUsuario"
@@ -144,10 +139,10 @@
             android:layout_marginStart="20dp"
             android:ems="10"
             android:inputType="text"
-            android:textColor="#ED1010"
+            android:textColor="@color/btn_color"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/txtUsuario"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
