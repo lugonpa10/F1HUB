@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerPosts = view.findViewById(R.id.recyclerPosts);
-        imgBtnPost = view.findViewById(R.id.imgBtnPost);
+        imgBtnPost = view.findViewById(R.id.imgPost);
         recyclerPosts.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
