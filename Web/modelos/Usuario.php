@@ -11,7 +11,7 @@ class Usuario
 
     private function request($method, $url, $data = null)
     {
-        
+
 
         $ch = curl_init($this->baseUrl . $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -24,10 +24,10 @@ class Usuario
         if (curl_errno($ch)) {
             throw new Exception("Error en la API: " . curl_error($ch));
         }
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
 
-       
+
         $decoded = json_decode($response);
         return $decoded !== null ? $decoded : $httpCode;
     }
@@ -55,5 +55,19 @@ class Usuario
             'passwordHash' => $password
         ];
         return $this->request('POST', '/inicioSesion', $datos);
+    }
+
+    public function editarUsuario($nombreUsuario, $nombre, $apellidos, $fechaNacimiento, $correo, $genero)
+    {
+
+        $datos = [
+            'nombreUsuario' => $nombreUsuario,
+            'nombre' => $nombre,
+            'apellidos' => $apellidos,
+            'email' => $correo,
+            'fechaNacimiento' => $fechaNacimiento,
+            'genero' => $genero
+        ];
+        return $this->request('PUT','/editar',$datos);
     }
 }
