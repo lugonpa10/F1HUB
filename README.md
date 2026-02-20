@@ -88,7 +88,11 @@ En este informe se plasmará cada 5 **días** los distintos avances y cambios qu
 
 ⚙️ Ajuste de componentes en la pantalla de moviles e implementacion de tema claro y oscuro.
 
+---
+# 20/02
 
+🚀 Avances en todas las interfaces y funcionalidades de la web.
+✅ Finalizacion de las funciones en la Api para subir una publicacion,borrarla y editar un perfil
 
 
 
