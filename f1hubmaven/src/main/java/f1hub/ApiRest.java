@@ -9,11 +9,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.PATCH;
 import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
@@ -58,6 +61,7 @@ public class ApiRest {
 
                 return Response.status(Response.Status.CREATED)
                         .entity("Usuario insertado correctamente")
+
                         .build();
 
             } catch (SQLException e) {
@@ -85,7 +89,7 @@ public class ApiRest {
         }
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            String sql = "Select nombre,apellidos,nombre_usuario,password_hash,email,genero,fecha_nacimiento from Usuarios where nombre_usuario  = ?";
+            String sql = "Select Id_usuario,nombre,apellidos,nombre_usuario,password_hash,email,genero,fecha_nacimiento from Usuarios where nombre_usuario  = ?";
 
             try (Connection conexion = DriverManager.getConnection(URL, USER, PASS);
                     PreparedStatement ps = conexion.prepareStatement(sql)) {
@@ -101,17 +105,17 @@ public class ApiRest {
 
                 if (BCrypt.checkpw(u.getPasswordHash(), passwordHashBD)) {
                     Usuarios usuarioResponse = new Usuarios();
-                    System.out.println("llega");
+                    usuarioResponse.setIdUsuario(rs.getInt("id_Usuario"));
                     usuarioResponse.setNombre(rs.getString("nombre"));
                     usuarioResponse.setApellidos(rs.getString("apellidos"));
                     usuarioResponse.setNombreUsuario(rs.getString("nombre_usuario"));
                     usuarioResponse.setEmail(rs.getString("email"));
                     usuarioResponse.setGenero(rs.getString("genero"));
                     usuarioResponse.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
-                    System.out.println("no llega");
+
                     return Response.ok(usuarioResponse).build();
                 } else {
-                    System.out.println("c");
+
                     return Response.status(Response.Status.UNAUTHORIZED)
                             .entity("Contraseña incorrecta")
                             .build();
@@ -119,7 +123,6 @@ public class ApiRest {
 
             } catch (SQLException e) {
                 e.printStackTrace();
-                System.out.println("error");
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                         .entity("Error SQL")
                         .build();
@@ -127,7 +130,7 @@ public class ApiRest {
             }
 
         } catch (ClassNotFoundException e) {
-            System.out.println("error2");
+
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("No se encuentra el driver")
                     .build();
@@ -135,29 +138,38 @@ public class ApiRest {
 
     }
 
-    @POST
-    @Path("/subirPublicaciones")
+    @PUT
+    @Path("/editar")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response subirPublicacion(Publicaciones p) {
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response editarUsuario(Usuarios u) {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            String sql = "Insert into Publicaciones(id_Usuario,texto,fecha_publicacion) VALUES (?,?,current_timestamp)";
+            String sql = "update Usuarios Set nombre = ?,apellidos = ?,email = ?,fecha_nacimiento = ?, genero = ? where nombre_usuario = ?";
             try (Connection conexion = DriverManager.getConnection(URL, USER, PASS);
                     PreparedStatement ps = conexion.prepareStatement(sql)) {
-                        ps.setInt(1,p.getUsuario().getIdUsuario());
-                        ps.setString(2, p.getTexto());
-                        
 
-                        
-                        
+                ps.setString(1, u.getNombre());
+                ps.setString(2, u.getApellidos());
+                ps.setString(3, u.getEmail());
+                ps.setDate(4, u.getFechaNacimiento());
+                ps.setString(5, u.getGenero());
+                ps.setString(6, u.getNombreUsuario());
+
+                ps.executeUpdate();
+
+                return Response.ok("Se ha editado correctamente el usuario").build();
 
             } catch (SQLException e) {
+                e.printStackTrace();
+                return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Error Sql").build();
 
             }
-        } catch (ClassNotFoundException ex) {
-            // TODO: handle exception
-        }
 
+        } catch (ClassNotFoundException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("No se encuentra el driver").build();
+        }
     }
 
+   
 }
