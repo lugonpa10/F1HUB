@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Paso 2 - F1 HUB</title>
-    <link rel="stylesheet" href="/public/css/Registro.css">
+    <link rel="stylesheet" href="public/css/Registro.css">
 </head>
 <body>
 
@@ -35,7 +35,7 @@
                 <button type="submit" class="btn-confirm">Confirmar Registro</button>
                 
                 <div style="margin-top: 15px;">
-                    <a href="Registro.php" style="color: #e10600; text-decoration: none; font-size: 0.8rem; font-weight: bold;">« Volver a mis datos</a>
+                    <a href="index.php?action=registro1" style="color: #e10600; text-decoration: none; font-size: 0.8rem; font-weight: bold;">« Volver a mis datos</a>
                 </div>
             </form>
         </div>

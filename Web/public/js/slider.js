@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const images = [
-        '../public/imagenes/alonsoPodio.jpg',
-        '../public/imagenes/max.jpg',
-        '../public/imagenes/senna.jpg',       
-        '../public/imagenes/michael.jpeg',
-        '../public/imagenes/mclarenCoche.jpeg',
-        '../public/imagenes/merc.jpg',
-        '../public/imagenes/niki-lauda.jpg',
-        '../public/imagenes/mclaren-1988.jpg'
+        'public/imagenes/alonsoPodio.jpg',
+        'public/imagenes/max.jpg',
+        'public/imagenes/senna.jpg',       
+        'public/imagenes/michael.jpeg',
+        'public/imagenes/mclarenCoche.jpeg',
+        'public/imagenes/merc.jpg',
+        'public/imagenes/niki-lauda.jpg',
+        'public/imagenes/mclaren-1988.jpg'
     ];
 
     let currentIndex = 0;

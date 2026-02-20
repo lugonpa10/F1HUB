@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Paso 1 - F1 HUB</title>
-    <link rel="stylesheet" href="/public/css/Registro.css">
+    <link rel="stylesheet" href="public/css/Registro.css">
 </head>
 
 <body>
@@ -54,16 +54,16 @@
                 </div>
 
                 <div class="radio_group">
-                    <input type="radio" name="genero" id="radio1">
+                    <input type="radio" name="genero" id="radio1" value="Hombre">
                     <label for="radio1" class="radio_label">Hombre</label>
 
-                    <input type="radio" name="genero" id="radio2">
+                    <input type="radio" name="genero" id="radio2" value="Mujer">
                     <label for="radio2" class="radio_label">Mujer</label>
 
-                    <input type="radio" name="genero" id="radio3">
+                    <input type="radio" name="genero" id="radio3" value="Otro">
                     <label for="radio3" class="radio_label">Otro</label>
 
-                    <input type="radio" name="genero" id="radio4">
+                    <input type="radio" name="genero" id="radio4" value="No especificado">
                     <label for="radio4" class="radio_label">Prefiero no decirlo</label>
                 </div>
 
@@ -71,7 +71,7 @@
             </form>
 
             <div class="register-link">
-                ¿Ya tienes cuenta? <a href="Iniciosesion.php">Inicia sesión</a>
+                ¿Ya tienes cuenta? <a href="index.php?action=InicioSesion">Inicia sesión</a>
             </div>
         </div>
     </main>
