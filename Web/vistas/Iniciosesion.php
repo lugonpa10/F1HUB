@@ -12,11 +12,7 @@
 
     <nav class="top-menu">
         <div class="logo">F1 HUB</div>
-        <ul>
-            <li><a href="#">Pilotos</a></li>
-            <li><a href="#">Coches</a></li>
-            <li><a href="#">Ajustes</a></li>
-        </ul>
+        
     </nav>
 
     <div class="main-container">
