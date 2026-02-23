@@ -39,6 +39,16 @@
                 android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+            <ImageButton
+                android:id="@+id/btnBorrarPublicacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@android:drawable/ic_menu_delete"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="#E10600"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"/>
 
         </LinearLayout>
 

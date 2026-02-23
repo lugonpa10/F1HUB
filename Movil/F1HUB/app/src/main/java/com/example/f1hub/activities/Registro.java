@@ -45,9 +45,7 @@ public class Registro extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view,
                                        int i, long l) {
-// Se usa la variable booleana para impedir que muestre el resultado
-// seleccionado por defecto cuando se accede al activity. Solo mostramos
-// cuando seleccionamos una opción.
+
 
                 TextView textView = (TextView) view;
                 textView.setTextColor(getResources().getColor(R.color.btn_color));
@@ -63,7 +61,7 @@ public class Registro extends AppCompatActivity {
             }
 
 
-            // Se ejecuta cuando se pulsa fuera del Spinner: cuandono se selecciona nada
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }

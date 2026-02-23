@@ -20,12 +20,16 @@ import com.example.f1hub.R;
 import com.example.f1hub.activities.MainActivity;
 import com.example.f1hub.activities.SubidaPublicaciones;
 import com.example.f1hub.adapters.AdaptadorPublicaciones;
+import com.example.f1hub.api.ApiRest;
 import com.example.f1hub.models.Publicaciones;
 import com.example.f1hub.models.Usuario;
 
 
+
 import java.util.ArrayList;
+
 import java.util.List;
+
 
 public class HomeFragment extends Fragment {
 
@@ -36,6 +40,7 @@ public class HomeFragment extends Fragment {
     private ActivityResultLauncher<Intent> publicacionLauncher;
 
     ImageButton imgBtnPost;
+    ApiRest api = new ApiRest();
 
     @Nullable
     @Override
@@ -69,11 +74,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        cargarPublicaciones();
 
         return view;
 
 
     }
+
+
 
 
     @Override
@@ -84,18 +92,22 @@ public class HomeFragment extends Fragment {
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
                     if (result.getResultCode() == getActivity().RESULT_OK && result.getData() != null) {
-                        String post = result.getData().getStringExtra("post");
-                        String nombre = result.getData().getStringExtra("nombre");
+                        cargarPublicaciones();
 
-                        if (post != null && nombre != null) {
-                            listaPublicaciones.add(0,
-                                    new Publicaciones(nombre, post, "Ahora"));
-                            adapter.notifyItemInserted(0);
-                            recyclerPosts.scrollToPosition(0);
-                        }
                     }
                 }
         );
+    }
+
+    private void cargarPublicaciones() {
+        api.obtenerTodasPublicaciones(lista -> {
+            if (!isAdded()) return;
+            requireActivity().runOnUiThread(() -> {
+                listaPublicaciones.clear();
+                listaPublicaciones.addAll(lista);
+                adapter.notifyDataSetChanged();
+            });
+        });
     }
 }
 

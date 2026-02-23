@@ -3,15 +3,14 @@
 <item android:id="@+id/home"
     android:title="Home"
     android:icon="@drawable/baseline_home_24"/>
-    <item android:id="@+id/notification"
-        android:title="Notification"
-        android:icon="@drawable/baseline_notifications_24"/>
-    <item android:id="@+id/message"
-    android:title="Message"
-    android:icon="@drawable/baseline_insert_comment_24"/>
     <item android:id="@+id/perfil"
         android:title="Perfil"
         android:icon="@drawable/outline_accessibility_24"/>
+    <item android:id="@+id/salir"
+        android:title="Salir"
+        android:icon="@drawable/outline_arrow_left_alt_24"/>
+
+
 
 
 </menu>

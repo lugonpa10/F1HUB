@@ -21,12 +21,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.f1hub.R;
+import com.example.f1hub.api.ApiRest;
 import com.example.f1hub.fragments.HomeFragment;
 import com.example.f1hub.models.Usuario;
 
 public class SubidaPublicaciones extends AppCompatActivity {
     Toolbar toolbarPublicaciones;
     EditText etSubirPublicacion;
+    ApiRest api = new ApiRest();
 
     private Usuario usuario;
 
@@ -93,17 +95,27 @@ public class SubidaPublicaciones extends AppCompatActivity {
                         .show();
             }else {
 
-                String nombreUsuario = usuario.getNombreUsuario();
-
-
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("post",post);
-                resultIntent.putExtra("nombre",nombreUsuario);
-                setResult(RESULT_OK,resultIntent);
-                new AlertDialog.Builder(SubidaPublicaciones.this)
-                        .setMessage("Publicacion Subida")
-                        .setPositiveButton("Aceptar",null)
-                        .show();
+                api.subirPublicacion(usuario.getId(), post, success -> {
+                    runOnUiThread(() -> {
+                        if (success) {
+                            new AlertDialog.Builder(SubidaPublicaciones.this)
+                                    .setMessage("Publicacion Subida")
+                                    .setPositiveButton("Aceptar", (d, w) -> {
+                                        Intent resultIntent = new Intent();
+                                        resultIntent.putExtra("post", post);
+                                        resultIntent.putExtra("nombre", usuario.getNombreUsuario());
+                                        setResult(RESULT_OK, resultIntent);
+                                        finish();
+                                    })
+                                    .show();
+                        } else {
+                            new AlertDialog.Builder(SubidaPublicaciones.this)
+                                    .setMessage("Error al subir la publicacion")
+                                    .setPositiveButton("Aceptar", null)
+                                    .show();
+                        }
+                    });
+                });
 
 
 

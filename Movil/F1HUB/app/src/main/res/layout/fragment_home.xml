@@ -40,13 +40,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/f1logo" />
 
-    <ImageButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/imgPost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="72dp"
         android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="#E10600"
+        app:tint="@android:color/white"
+        app:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

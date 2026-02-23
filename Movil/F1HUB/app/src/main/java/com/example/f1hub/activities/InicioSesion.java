@@ -26,7 +26,7 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 public class InicioSesion extends AppCompatActivity {
 
-    ShapeableImageView btnVerContraseña;
+
     EditText etPassword;
     EditText etUsuario;
 
@@ -35,7 +35,7 @@ public class InicioSesion extends AppCompatActivity {
     TextView txtCrearCuenta;
 
 
-    boolean passVisible = true;
+
     ApiRest api = new ApiRest();
 
     @Override
@@ -48,29 +48,13 @@ public class InicioSesion extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        btnVerContraseña = findViewById(R.id.btnVerContraseña);
+
         etPassword = findViewById(R.id.etContraseña);
         etUsuario = findViewById(R.id.etUsuario);
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
         txtCrearCuenta = findViewById(R.id.txtCrearCuenta);
         txtCrearCuenta.setPaintFlags(txtCrearCuenta.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        btnVerContraseña.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (passVisible) {
-                    etPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    passVisible = false;
-                    btnVerContraseña.setImageResource(R.drawable.ojocerrado);
-                } else {
-                    etPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                    passVisible = true;
-                    btnVerContraseña.setImageResource(R.drawable.ojoabierto);
-                }
 
-            }
-
-
-        });
 
         btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,14 +65,15 @@ public class InicioSesion extends AppCompatActivity {
                 api.inicioSesion(usuario, contrasenha, (success, userData) -> {
                     if (success && userData != null) {
                         try {
-
+                            Log.i("LOGIN_DATA", userData.toString());
                             Usuario usuarioObj = new Usuario(
+                                    userData.optInt("idUsuario", 0),
                                     userData.optString("nombre", ""),
                                     userData.optString("apellidos", ""),
                                     userData.optString("nombreUsuario", "Usuario"),
                                     userData.optString("email", ""),
                                     userData.optString("genero", ""),
-                                    userData.optString("fechaNacimiento", "")
+                                  String.valueOf(userData.optLong("fechaNacimiento",0))
                             );
 
 
