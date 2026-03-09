@@ -3,7 +3,7 @@ Este proyecto se basa en crear una **aplicación** multiplataforma con todos los
 La **aplicación** se basa en una red social enfocada al mundo de la Fórmula 1 (F1).  
 Tiene como nombre "F1HUB" y busca atraer a todo tipo de fans de este deporte, tanto expertos y muy avanzados en la materia como gente totalmente nueva con ganas de estar a la **última** **hora** sobre las noticias de la F1.
 
-En este informe se plasmará cada 5 **días** los distintos avances y cambios que vayan surgiendo en la **aplicación** en sus distintas modalidades (**web**, aplicación de **escritorio** y aplicación **móvil** ).  
+En este informe se plasmaran los distintos avances y cambios que vayan surgiendo en la **aplicación** en sus distintas modalidades (**web**, aplicación de **escritorio** y aplicación **móvil** ).  
 
 ## 🔗 Fuentes de Informacion:
 - Beekeeper studio + MySQL : [Tutorial](https://www.youtube.com/watch?v=_pyrtFLFKxM)
