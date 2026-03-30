@@ -95,6 +95,10 @@ En este informe se plasmaran los distintos avances y cambios que vayan surgiendo
 
 ✅ Finalizacion de las funciones en la Api para subir una publicacion,borrarla y editar un perfil
 
+---
+# 📅 30/03
+
+✅ Finalizacion de la aplicacion de **Escritorio**, tanto backend como frontend
 
 
 
