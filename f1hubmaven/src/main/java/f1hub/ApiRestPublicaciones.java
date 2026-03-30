@@ -19,9 +19,9 @@ import jakarta.ws.rs.core.Response;
 
 @Path("/publicaciones")
 public class ApiRestPublicaciones {
-    private static final String URL = "jdbc:mariadb://sql.freedb.tech:3306/freedb_F1HUB";
-    private static final String USER = "freedb_lugonpa_33";
-    private static final String PASS = "GUbUrE5WdG8?eUB";
+    private static final String URL = "jdbc:mariadb://localhost:3306/f1hub";
+    private static final String USER = "root";
+    private static final String PASS = "";
 
     @POST
     @Path("/subir")

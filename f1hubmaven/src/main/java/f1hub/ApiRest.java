@@ -28,15 +28,14 @@ import org.mindrot.jbcrypt.BCrypt;
 @Path("/usuarios")
 public class ApiRest {
 
-    private static final String URL = "jdbc:mariadb://sql.freedb.tech:3306/freedb_F1HUB";
-    private static final String USER = "freedb_lugonpa_33";
-    private static final String PASS = "GUbUrE5WdG8?eUB";
+    private static final String URL = "jdbc:mariadb://localhost:3306/f1hub";
+    private static final String USER = "root";
+    private static final String PASS = "";
 
     @POST
     @Path("/registro")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response insertarUsuario(Usuarios usuario) {
-
         try {
             Class.forName("org.mariadb.jdbc.Driver");
 
@@ -170,6 +169,7 @@ public class ApiRest {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("No se encuentra el driver").build();
         }
     }
+
 
    
 }
