@@ -2,3 +2,10 @@
 bin/
 obj/
 *.user
+
+# Exclusiones de Java y Maven
+target/
+f1hubmaven/target/
+*.class
+*.jar
+*.war
