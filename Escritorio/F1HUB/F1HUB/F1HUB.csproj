@@ -81,6 +81,11 @@
     <Compile Include="Forms\Auth\FormRegistro.Designer.cs">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Main\FormPerfil1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormPerfil.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +97,11 @@
     </Compile>
     <Compile Include="Forms\Main\FormPerfil.Designer.cs">
       <DependentUpon>FormPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\FormPrincipal1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormPrincipal.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\Publicacion.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -106,9 +116,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\FormPerfil.resx">
       <DependentUpon>FormPerfil.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormPerfil1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormPrincipal1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

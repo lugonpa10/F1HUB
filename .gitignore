@@ -1,14 +1,4 @@
 .vs/
 bin/
 obj/
-target/
-packages/
-
 *.user
-*.suo
-*.userosscache
-*.sln.docstates
-*.log
-
-Thumbs.db
-Desktop.ini

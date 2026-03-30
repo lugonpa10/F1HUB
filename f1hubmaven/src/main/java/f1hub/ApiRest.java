@@ -36,6 +36,7 @@ public class ApiRest {
     @Path("/registro")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response insertarUsuario(Usuarios usuario) {
+
         try {
             Class.forName("org.mariadb.jdbc.Driver");
 
@@ -169,7 +170,6 @@ public class ApiRest {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("No se encuentra el driver").build();
         }
     }
-
 
    
 }

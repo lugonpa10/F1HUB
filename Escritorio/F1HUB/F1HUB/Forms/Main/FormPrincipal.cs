@@ -17,7 +17,7 @@ namespace F1HUB
 
         private readonly ApiClient _apiClient;
         private readonly Usuario _usuario;
-
+           
         public FormPrincipal(ApiClient apiClient, Usuario usuario)
         {
             _apiClient = apiClient;
@@ -27,6 +27,8 @@ namespace F1HUB
             AplicarDatosUsuario();
             WireEvents();
         }
+
+
 
         private void WireEvents()
         {
